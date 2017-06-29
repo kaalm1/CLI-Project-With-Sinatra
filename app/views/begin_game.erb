@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+      <%= @new_hangman.print_tree.gsub(/\n/, '<br/>') %>
+      <p>
+        <%= @new_hangman.players_word %>
+        Letters picked: <%= @new_hangman.letters_picked %>
+      </p>
+      <form class="" action="/continue" method="post">
+        Please input a letter: <input type="text" name="new_letter" value=""> <br>
+        <%= "<input type='hidden' name='id' value='#{@new_hangman.id}'>" %>
+        <input type="submit" value="submit">
+      </form>
+  </body>
+</html>
